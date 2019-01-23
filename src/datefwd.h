@@ -22,7 +22,7 @@ namespace DateStuff
 		SATURDAY,
 		SUNDAY
 	};
-	enum Mohths
+	enum Months
 	{
 		INVALID_MONTH,
 		JANUARY,
@@ -74,8 +74,8 @@ namespace DateStuff
 	int nthWeekday(int n, int wd, int y, int m);
 	int daysInPrevMonth(int y, int m);
 	int daysInNextMonth(int y, int m);
-	int getDaysInMonth(bool is_leap, int m);
-	int getDaysToDate(bool is_leap, int m);
+	int getDaysInMonth(bool isleap, int m);
+	int getDaysToDate(bool isleap, int m);
 
 	int firstSat(int dow);
 	int firstSatOfMonth(int y, int m);
