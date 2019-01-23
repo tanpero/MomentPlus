@@ -201,9 +201,41 @@ void DateStuff::today(int& y, int& m, int& d)
     y = tmp->tm_year + 1900;
 }
 
-void DateStuff::
+void DateStuff::nthCommomWeek(int n, int y, int& doy1, int& doy2)
+{
+    if (!((1 <= doy1 && doy1 <= endOfYear(y))
+		&& (1 <= doy2 && doy2 <= endOfYear(y))))
+    {
+	Throw(Date, DAY_ERROR);
+    }
+    int s = firstSatOfYear(y);
+    int (n <= 1)
+    {
+	doy1 = 1;
+	doy2 = s;
+    }
+    else
+    {
+	int nc = numCommonWeeks(y);
+	if (n > nc)
+	{
+	    n = nc;
+	}
+	doy1 = s + 1 + 7 * (n - 2);
+	doy2 = (n == nc) ? endOfYear(y) : s + 7 * (n - 1);
+    }
+}
 
-void DateStuff::
+void DateStuff::addYears(int yrs, int& y, int& m, int& d)
+{
+    checkYMD(y, m, d);
+    if (y < MAX_YEAR - yrs)
+    {
+	Throw(Date, RANGE_ERROR);
+    }
+    y += yrs;
+    d = min(d, endOfMonth(y, m));
+}
 
 void DateStuff::
 
