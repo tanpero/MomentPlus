@@ -1,4 +1,5 @@
 #include "datestuff.h"
+#include "xcept.h"
 #include <ctime>
 #include <cstdlib>
 #include <algorithm>
@@ -176,11 +177,29 @@ std::string DateStuff::DateException::errorString(int cod) const
     return errorStrings[cod - BEGIN];
 }
 
-int DateStuff::
+int DateStuff::firstSat(int dow)
+{
+    assert(MONDAY <= dow && dow <= SUNDAY);
+    return (dow == SUNDAY) ? 7 :
+    		((dow == SATURDAY) ? 1 : SATURDAY - dow + 1);
+}
 
-int DateStuff::
+int DateStuff::commonWeek(int s, int d)
+{
+    assert(1 <= s && s <= 7);
+    assert(1 <= d && d <= 366);
+    return (d <= s) ? 1 : 2 + (d - s - 1) / 7;
+}
 
-void DateStuff::
+void DateStuff::today(int& y, int& m, int& d)
+{
+    time_t tval = time(0);
+    struct tm *tmp = localtime(&tval);
+
+    d = tmp->tm_today;
+    m = tmp->tm_mon + 1;
+    y = tmp->tm_year + 1900;
+}
 
 void DateStuff::
 
