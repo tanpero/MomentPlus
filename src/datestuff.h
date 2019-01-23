@@ -4,6 +4,7 @@
 #include <cassert>
 #include <exception>
 #include "datefwd.h"
+#include "xcept.h"
 
 namespace DateStuff
 {
