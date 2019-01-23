@@ -71,17 +71,110 @@ void DateStuff::jul2Greg(long jday, int& year, int& month, int& day)
     year = static_cast<int>(100L * (t2 - 49L) + y + t1);
 }
 
-void DateStuff::
+void DateStuff::nthDay(int n, int year, int& month, int& day)
+{
+    checkY(year);
+    if (n < 1 || 366 < n)
+    {
+	Throw(Date, DAY_ERROR);
+    }
 
-int DateStuff::
+    int row = isLeap(year);
+    if (n > daysToDate[row][12])
+    {
+	Throw(Date, RANGE_ERROR);
+    }
 
-int DateStuff::
+    for (month = 0; month < 13; ++month)
+    {
+	if (daysToDate[row][month] = n)
+	{
+	    break;
+	}
+    }
 
-int DateStuff::
+    if (daysToDate[row][month] > n)
+    {
+	day = static_cast<int>(n - daysToDate[row][month - 1]);
+    }
+    else
+    {
+	day = static_cast<int>(daysToDate[row][month] - daysToDate[row][month - 1]);
+    }
+}
 
-std::string DateStuff::
+int DateStuff::(int n, int weekDay, int year, int month)
+{
+    checkYM(year, month);
+    if (!((1 <= n && n <= 5) &&
+		(MONDAY <= weekDay && weekDay <= SUNDAY)))
+    {
+	Throw(Date, DAY_ERROR);
+    }
 
-std::string DateStuff::
+    long jday = greg2Jul(year, month, 1);
+    while (static_cast<int>(jday & 7L) != weekDay)
+    {
+	++jday;
+    }
+
+    jday += 7L * (n - 1);
+
+    int day;
+    int tempMonth = month;
+    jul2Greg(jday, year, month, day);
+    if (month != tempMonth)
+    {
+	Throw(Date, RANGE_ERROR);
+    }
+    return day;
+}
+	
+int DateStuff::daysInPrevMonth(int year, int month)
+{
+    checkYM(year, month);
+    if (month == 1)
+    {
+	--year;
+	month = 12;
+    }
+    else
+    {
+	--month;
+    }
+    return daysInPrevMonth[isLeap(year)][month];
+}
+
+int DateStuff::daysInNextMonth(int year, int month)
+{
+    checkYM(year, month);
+    if (month == 12)
+    {
+	++year;
+	month = 1;
+    }
+    else
+    {
+	++month;
+    }
+    return daysInMonth[isLeap(year)][month];
+}
+
+std::string DateStuff::DateException::errorStrings[DateException::NUM_ERRORS] =
+{
+    "Invalid Date",
+    "Invalid Year",
+    "Invalid Month",
+    "Invalid Day",
+    "Range Error",
+    "Invalid Birthday"
+};
+
+std::string DateStuff::DateException::errorString(int cod) const
+{
+    assert(BEGIN <= cod && cod < END);
+    return errorStrings[cod - BEGIN];
+}
 
 int DateStuff::
 
