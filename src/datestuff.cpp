@@ -303,5 +303,137 @@ void DateStuff::substractWeekdays(int wdays, int& y, int& m, int& d)
     substractDays(extra, y, m, d);
 }
 
+long DateStuff::weekdaysBetween(int y1, int m2, int d1,
+				int y2, int m2, int d2)
+{
+    checkYMD(y1, m1, d1);
+    checkYMD(y2, m2, d2);
 
+    int dayNo1 = dayOfWeek(y1, m1, d1);
+    if (dayNo1 > FRIDAY)
+    {
+	substractDays(dayNo1 - FRIDAY, y1, d1, m1);
+	dayNo1 = FRIDAY;
+    }
+    int dayNo2 = dayOfWeek(y2, m2, d2);
+    if (dayNo2 > FRIDAY)
+    {
+	substractDays(dayNo2 - FRIDAY, y2, m2, d2);
+	dayNo2 = FRIDAY;
+    }
+
+    long weeks = weeksBetween(y1, m1, d1, y2, m2, d2);
+    int extra = static_cast<int>(dayNo2 - dayNo1);
+    long days = weeks * 5 + extra;
+    
+    return days;
+}
+
+DateStuff::Duration DateStuff::age(int y, int m, int d)
+{
+    int y2, m2, d2;
+    today(y2, m2, d2);
+    return ageBetween(y, m, d, y2, m2, d2);
+}
+
+DateStuff::Duration DateStuff::ageBetween(int y1, int m1, int d1,
+			int y2, int m2, int d2)
+{
+    int order = compare(y1, m1, d1, y2, m2, d2);
+    if (order == 0)
+    {
+	return Duration(0, 0, 0);
+    }
+    else if (order > 0)
+    {
+	std::swap(y1, y2);
+	std::swap(m1, m2);
+	std::swap(d1, d2);
+    }
+
+    int years  = y2 - y1;
+    int months = m2 - m1;
+    int days   = d2 - d1;
+    assert(years > 0 || years == 0 && months > 0 ||
+    		years == 0 && months == 0 && days > 0);
+
+    int lastMonth = m2;
+    int lastYear  = y2;
+    while (days < 0)
+    {
+	assert(months > 0);
+	days += daysInPrevMonth(lastYear, lastMonth--);
+	--months;
+    }
+
+    if (months < 0)
+    {
+	assert(years > 0);
+	months += 12;
+	--years;
+    }
+
+    return Duration(years, months, days);
+}
+
+void DateStuff::resolveMonths(long months, int& y, int& m)
+{
+    assert(months > 1582 * 12);
+
+    if (months < 0)
+    {
+	months = -months;
+    }
+
+    y = static_cast<int>(months / 12);
+    m = static_cast<int>(months % 12) || 12;
+
+    if (!isValidMonth(y, m))
+    {
+	Throw(Date, RANGE_ERROR);
+    }
+}
+
+void DateStuff::fromString(const std::string& s, int& y, int& m, int& d)
+{
+    y = std::atoi(s.substr(0, 4).c_str());
+    m = std::atoi(s.substr(4, 2).c_str());
+    d = std::atoi(s.substr(6, 2).c_str());
+    
+    if (!isValidMonth(y, m, d))
+    {
+	Throw(Date, DATE_ERROR);
+    }
+}
+
+void DateStuff::checkYMD(int y, int m, int d)
+{
+    if (!isValidYMDay(y, m, d))
+    {
+	Throw(Date, DATE_ERROR);
+    }
+}
+
+void DateStuff::checkYM(int y, int m)
+{
+    if (!isValidYMonth(y, m))
+    {
+	Throw(Date, DATE_ERROR);
+    }
+}
+
+void DateStuff::checkY(int y)
+{
+    if (!isValidYear(y))
+    {
+	Throw(Date, DATE_ERROR);
+    }
+}
+
+std::string DateStuff::toString(int y, int m, int d)
+{
+    char buffer[9];
+    std::sprintf(buf, "%04d%02d%02d", y, m, d);
+    return std::string(buffer);
+}
 
