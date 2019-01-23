@@ -234,18 +234,74 @@ void DateStuff::addYears(int yrs, int& y, int& m, int& d)
 	Throw(Date, RANGE_ERROR);
     }
     y += yrs;
-    d = min(d, endOfMonth(y, m));
+    d = std::min(d, endOfMonth(y, m));
 }
 
-void DateStuff::
+void DateStuff::substractYears(int yrs, int& y, int& m, int& d)
+{
+    checkYMD(y, m, d);
+    if (y < MIN_YEAR + yrs)
+    {
+	Throw(Date, RANGE_ERROR);
+    }
+    y -= yrs;
+    d = std::min(d, endOfMonth(y, m));
+}
 
-void DateStuff::
+void DateStuff::addMonths(int mths, int& y, int& m, int& d)
+{
+    checkYMD(y, m, d);
+    resolveMonths(y * 12 + m + mths, y, m);
+    d = std::min(d, endOfMonth(y, m));
+}
 
-void DateStuff::
+void DateStuff::substractMonths(int mths, int& y, int& m, int& d)
+{
+    checkYMD(y, m, d);
+    resolveMonths(y * 12 + m - mths, y, m);
+    d = std::min(d, endOfMonth(y, m));
+}
 
-void DateStuff::
+void DateStuff::addWeekdays(int wdays, int& y, int& m, int& d)
+{
+    checkYMD(y, m, d);
+    int dayNo = dayOfWeek(y, m, d);
+    if (dayNo > FRIDAY)
+    {
+	substractDays(dayNo - FRIDAY, y, m, d);
+	dayNo = FRIDAY;
+    }
 
-void DateStuff::
+    int extra = static_cast<int>(wdays % 5);
+    if (dayNo + extra > FRIDAY)
+    {
+	extra += 2;
+    }
+    if (extra > 0)
+    {
+	addDays(extra, y, m, d);
+    }
+}
+
+void DateStuff::substractWeekdays(int wdays, int& y, int& m, int& d)
+{
+    checkYMD(y, m, d);
+    int dayNo = dayOfWeek(y, m, d);
+    if (dayNo > FRIDAY)
+    {
+	addDays(7 - dayNo, y, m, d);
+	dayNo = MONDAY;
+    }
+
+    substractWeeks(wdays / 5, y, m, d);
+
+    int extra = static_cast<int>(wdays % 5);
+    if (dayNo - extra < MONDAY)
+    {
+	extra += 2;
+    }
+    substractDays(extra, y, m, d);
+}
 
 
 
