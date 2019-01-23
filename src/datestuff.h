@@ -22,7 +22,7 @@ namespace DateStuff
 	    DateException(int, cod, const std::string& msg = "") 
 	    	    : std::exception((errorStrings[cod] + ":" + msg).c_str())
 		    {
-			std::assert(BEGIN <= cod && cod < END);
+			assert(BEGIN <= cod && cod < END);
 		    }
 		    enum {
 			BEGIN = 200
