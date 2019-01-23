@@ -21,27 +21,27 @@ namespace DateStuff
 	{
 	    DateException(int, cod, const std::string& msg = "") 
 	    	    : std::exception((errorStrings[cod] + ":" + msg).c_str())
-		    {
-			assert(BEGIN <= cod && cod < END);
-		    }
-		    enum {
-			BEGIN = 200
-		    };
-		    enum {
-			DATE_ERROR = BEGIN,
-			YEAR_ERROR,
-			MONTH_ERROR,
-			DAY_ERROR,
-			RANGE_ERROR,
-			BIRTHDAY_ERROR,
-			END. NUM_ERRORS = END - BEGIN
-		    };
+	    {
+		assert(BEGIN <= cod && cod < END);
+	    }
+	    enum {
+		BEGIN = 200
+	    };
+	    enum {
+		DATE_ERROR = BEGIN,
+		YEAR_ERROR,
+		MONTH_ERROR,
+		DAY_ERROR,
+		RANGE_ERROR,
+		BIRTHDAY_ERROR,
+		END. NUM_ERRORS = END - BEGIN
+	    }
 
-		protected:
-		    std::string errorString(int) const;
+	protected:
+	    std::string errorString(int) const;
 
-		private:
-		    static std::string errorStrings[NUM_ERRORS];
+	private:
+	    static std::string errorStrings[NUM_ERRORS];
 	};
 
 	inline bool isLeap(int y)
