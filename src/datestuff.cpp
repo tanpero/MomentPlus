@@ -23,7 +23,7 @@ namespace DateStuff
 
 int DateStuff::getDaysInMonth(bool isleap, int m)
 {
-    std::assert(isleap == 0 || isleap == 1);
+    assert(isleap == 0 || isleap == 1);
     if (!isValidMonth(m))
     {
 	Throw(Date, MONTH_ERROR);
@@ -33,7 +33,7 @@ int DateStuff::getDaysInMonth(bool isleap, int m)
 
 int DateStuff::getDaysToDate(bool isleap, int m)
 {
-    std::assert(isleap == 0 || isleap == 1);
+    assert(isleap == 0 || isleap == 1);
     if (m < 1 || 13 < m)
     {
 	Throw(Date, MONTH_ERROR);
