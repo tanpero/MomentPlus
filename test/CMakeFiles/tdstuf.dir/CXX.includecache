@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/repo/scratch/MomentPlus/src/datefwd.h
+climits
+-
+string
+-
+
+/root/repo/scratch/MomentPlus/src/datestuff.cpp
+datestuff.h
+/root/repo/scratch/MomentPlus/src/datestuff.h
+ctime
+-
+cstdlib
+-
+algorithm
+-
+
+/root/repo/scratch/MomentPlus/src/datestuff.h
+cassert
+-
+exception
+-
+cstdio
+-
+datefwd.h
+/root/repo/scratch/MomentPlus/src/datefwd.h
+

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o CMakeFiles/tdstuf.dir/tdstuf.cpp.o  -o tdstuf 
