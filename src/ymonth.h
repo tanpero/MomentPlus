@@ -100,5 +100,57 @@ namespace DateStuff
 	return (m_year - right.m_year) * 12L + m_month - right.m_month;
     }
 
+    inline long YMonth::monthsBetween(const YMonth& right) const
+    {
+	long diff = right - *this;
+	return diff >= 0 ? diff : -diff;
+    }
+
+    inline void YMonth::addMonths(long m)
+    {
+	resolve(m_year * 12L + m_month + m);
+    }
+
+    inline void YMonth::substractMonths(long m)
+    {
+	resolve(m_month * 12L + m_month - m);
+    }
+
+    inline Duration YMonth::ageBetween(const YMonth& right) const
+    {
+	return ageBetween(right, *this);
+    }
+
+    inline bool YMonth::isValid() const
+    {
+	return Super::isValid() &&
+		1 <= m_month && m_month <= 12;
+    }
+
+    inline bool YMonth::isEmpty() const
+    {
+	return Super::isEmpty() && m_month == 0;
+    }
+
+    inline std::string YMonth::toString() const
+    {
+	char buffer[23];
+	sprintf(buffer, "%04d%02d", m_year, m_month);
+	return isEmpty() ? std::string() : string(buffer);
+    }
+
+    inline void YMonth::resolve(long months)
+    {
+	DateStuff::resolveMonths(months, m_year, m_month);
+    }
+
+    inline Duration YMonth::ageBetween(const YMonth& p1,
+    					const YMonth& p2)
+    {
+	return DateStuff::ageBetween(p1.m_year, p1.m_month, 0,
+				p2.m_year, p2.m_month, 0);
+    }
+};
+
 #endif // !_SRC_YMONTH_H_
 
