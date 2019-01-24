@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/repo/scratch/MomentPlus
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/repo/scratch/MomentPlus
+CMAKE_BINARY_DIR = /root/repo/scratch/MomentPlus/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/repo/scratch/MomentPlus && $(CMAKE_COMMAND) -E cmake_progress_start /root/repo/scratch/MomentPlus/CMakeFiles /root/repo/scratch/MomentPlus/test/CMakeFiles/progress.marks
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f CMakeFiles/Makefile2 test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/repo/scratch/MomentPlus/CMakeFiles 0
+	cd /root/repo/scratch/MomentPlus/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/repo/scratch/MomentPlus/build/CMakeFiles /root/repo/scratch/MomentPlus/build/test/CMakeFiles/progress.marks
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f CMakeFiles/Makefile2 test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/repo/scratch/MomentPlus/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f CMakeFiles/Makefile2 test/clean
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/repo/scratch/MomentPlus && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/repo/scratch/MomentPlus/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/CMakeFiles/tdstuf.dir/rule:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tdstuf.dir/rule
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tdstuf.dir/rule
 .PHONY : test/CMakeFiles/tdstuf.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ tdstuf: test/CMakeFiles/tdstuf.dir/rule
 
 # fast build rule for target.
 tdstuf/fast:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/build
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/build
 .PHONY : tdstuf/fast
 
 __/src/datestuff.o: __/src/datestuff.cpp.o
@@ -131,7 +131,7 @@ __/src/datestuff.o: __/src/datestuff.cpp.o
 
 # target to build an object file
 __/src/datestuff.cpp.o:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o
 .PHONY : __/src/datestuff.cpp.o
 
 __/src/datestuff.i: __/src/datestuff.cpp.i
@@ -140,7 +140,7 @@ __/src/datestuff.i: __/src/datestuff.cpp.i
 
 # target to preprocess a source file
 __/src/datestuff.cpp.i:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.i
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.i
 .PHONY : __/src/datestuff.cpp.i
 
 __/src/datestuff.s: __/src/datestuff.cpp.s
@@ -149,7 +149,7 @@ __/src/datestuff.s: __/src/datestuff.cpp.s
 
 # target to generate assembly for a file
 __/src/datestuff.cpp.s:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.s
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.s
 .PHONY : __/src/datestuff.cpp.s
 
 tdstuf.o: tdstuf.cpp.o
@@ -158,7 +158,7 @@ tdstuf.o: tdstuf.cpp.o
 
 # target to build an object file
 tdstuf.cpp.o:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o
 .PHONY : tdstuf.cpp.o
 
 tdstuf.i: tdstuf.cpp.i
@@ -167,7 +167,7 @@ tdstuf.i: tdstuf.cpp.i
 
 # target to preprocess a source file
 tdstuf.cpp.i:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/tdstuf.cpp.i
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/tdstuf.cpp.i
 .PHONY : tdstuf.cpp.i
 
 tdstuf.s: tdstuf.cpp.s
@@ -176,7 +176,7 @@ tdstuf.s: tdstuf.cpp.s
 
 # target to generate assembly for a file
 tdstuf.cpp.s:
-	cd /root/repo/scratch/MomentPlus && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/tdstuf.cpp.s
+	cd /root/repo/scratch/MomentPlus/build && $(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/tdstuf.cpp.s
 .PHONY : tdstuf.cpp.s
 
 # Help Target
@@ -205,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/repo/scratch/MomentPlus && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/repo/scratch/MomentPlus/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
