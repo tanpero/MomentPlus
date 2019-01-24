@@ -1,5 +1,6 @@
 #include "../src/datestuff.h"
 #include <iostream>
+#include <ctime>
 
 static const char* dayText[] = {"Monday", "Tuesday", "wednesday",
 	"Thursday", "Friday", "Saturday", "Sunday"};
@@ -8,6 +9,7 @@ int main()
     using namespace DateStuff;
     using namespace std;
     
+    struct tm *now;
     int year = 2019;
     int month = 1;
     int day = 24;
@@ -24,6 +26,11 @@ int main()
     
     long jday = greg2Jul(year, month, day);
     cout << "Julian day number: " << jday << endl;
+
+    int year2, month2, day2;
+    jul2Greg(jday + 100, year2, month2, day2);
+    cout << "100 days from now: " << month2 << '/' << day2 << '/'
+		<< year2 << endl;
 
     return 0;
 }

@@ -1,0 +1,7 @@
+/d/repositary/MomentPlus/CMakeFiles/rebuild_cache.dir
+/d/repositary/MomentPlus/CMakeFiles/edit_cache.dir
+/d/repositary/MomentPlus/src/CMakeFiles/rebuild_cache.dir
+/d/repositary/MomentPlus/src/CMakeFiles/edit_cache.dir
+/d/repositary/MomentPlus/test/CMakeFiles/rebuild_cache.dir
+/d/repositary/MomentPlus/test/CMakeFiles/tdstuf.dir
+/d/repositary/MomentPlus/test/CMakeFiles/edit_cache.dir
