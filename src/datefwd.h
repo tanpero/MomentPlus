@@ -50,7 +50,7 @@ namespace DateStuff
 	// Funtions of dates.
 
 	// Date of system.
-	void today(int*, int&, int&);
+	void today(int&, int&, int&);
 
 	// To check leap. 
 	bool isLeap(int y);
@@ -58,7 +58,7 @@ namespace DateStuff
 	// Others checking.
 	bool isValidYear(int y);
 	bool isValidMonth(int m);
-	bool isValidDay(int d);
+	bool isValidDay(int m, int d);
 	bool isValidYMonth(int y, int m);
 	bool isValidYMDay(int y, int m, int d);
 
@@ -120,7 +120,7 @@ namespace DateStuff
 	void fromString(const std::string& str, int& y, int& m, int& d);
 
 	// Others.
-	void ResolveMonths(long mths, int& y, int d);
+	void resolveMonths(long months, int& y, int& m);
 	void checkY(int y);
 	void checkYM(int y, int m);
 	void checkYMD(int y, int m, int d);
