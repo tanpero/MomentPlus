@@ -32,7 +32,6 @@
 *.app
 
 # CMake Files
-cmake_
 cmake_install.cmake
 CMakeFiles
 CMakeCache.txt
