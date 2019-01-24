@@ -1,7 +1,0 @@
-/root/repo/scratch/MomentPlus/CMakeFiles/rebuild_cache.dir
-/root/repo/scratch/MomentPlus/CMakeFiles/edit_cache.dir
-/root/repo/scratch/MomentPlus/src/CMakeFiles/rebuild_cache.dir
-/root/repo/scratch/MomentPlus/src/CMakeFiles/edit_cache.dir
-/root/repo/scratch/MomentPlus/test/CMakeFiles/rebuild_cache.dir
-/root/repo/scratch/MomentPlus/test/CMakeFiles/edit_cache.dir
-/root/repo/scratch/MomentPlus/test/CMakeFiles/tdstuf.dir
