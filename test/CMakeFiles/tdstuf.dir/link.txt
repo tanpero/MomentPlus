@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o CMakeFiles/tdstuf.dir/tdstuf.cpp.o  -o tdstuf 
+/usr/bin/c++.exe   -Wl,--enable-auto-import CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o CMakeFiles/tdstuf.dir/tdstuf.cpp.o  -o tdstuf.exe -Wl,--out-implib,libtdstuf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

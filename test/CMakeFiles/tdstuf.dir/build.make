@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake.exe
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/repo/scratch/MomentPlus
+CMAKE_SOURCE_DIR = /d/repositary/MomentPlus
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/repo/scratch/MomentPlus
+CMAKE_BINARY_DIR = /d/repositary/MomentPlus
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/tdstuf.dir/depend.make
@@ -59,29 +59,29 @@ include test/CMakeFiles/tdstuf.dir/flags.make
 
 test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o: test/CMakeFiles/tdstuf.dir/flags.make
 test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o: src/datestuff.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/repo/scratch/MomentPlus/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o"
-	cd /root/repo/scratch/MomentPlus/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o -c /root/repo/scratch/MomentPlus/src/datestuff.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/repositary/MomentPlus/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o"
+	cd /d/repositary/MomentPlus/test && /usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o -c /d/repositary/MomentPlus/src/datestuff.cpp
 
 test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.i"
-	cd /root/repo/scratch/MomentPlus/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/repo/scratch/MomentPlus/src/datestuff.cpp > CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.i
+	cd /d/repositary/MomentPlus/test && /usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /d/repositary/MomentPlus/src/datestuff.cpp > CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.i
 
 test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.s"
-	cd /root/repo/scratch/MomentPlus/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/repo/scratch/MomentPlus/src/datestuff.cpp -o CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.s
+	cd /d/repositary/MomentPlus/test && /usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /d/repositary/MomentPlus/src/datestuff.cpp -o CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.s
 
 test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o: test/CMakeFiles/tdstuf.dir/flags.make
 test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o: test/tdstuf.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/repo/scratch/MomentPlus/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o"
-	cd /root/repo/scratch/MomentPlus/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tdstuf.dir/tdstuf.cpp.o -c /root/repo/scratch/MomentPlus/test/tdstuf.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/repositary/MomentPlus/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o"
+	cd /d/repositary/MomentPlus/test && /usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tdstuf.dir/tdstuf.cpp.o -c /d/repositary/MomentPlus/test/tdstuf.cpp
 
 test/CMakeFiles/tdstuf.dir/tdstuf.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tdstuf.dir/tdstuf.cpp.i"
-	cd /root/repo/scratch/MomentPlus/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/repo/scratch/MomentPlus/test/tdstuf.cpp > CMakeFiles/tdstuf.dir/tdstuf.cpp.i
+	cd /d/repositary/MomentPlus/test && /usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /d/repositary/MomentPlus/test/tdstuf.cpp > CMakeFiles/tdstuf.dir/tdstuf.cpp.i
 
 test/CMakeFiles/tdstuf.dir/tdstuf.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tdstuf.dir/tdstuf.cpp.s"
-	cd /root/repo/scratch/MomentPlus/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/repo/scratch/MomentPlus/test/tdstuf.cpp -o CMakeFiles/tdstuf.dir/tdstuf.cpp.s
+	cd /d/repositary/MomentPlus/test && /usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /d/repositary/MomentPlus/test/tdstuf.cpp -o CMakeFiles/tdstuf.dir/tdstuf.cpp.s
 
 # Object files for target tdstuf
 tdstuf_OBJECTS = \
@@ -91,23 +91,23 @@ tdstuf_OBJECTS = \
 # External object files for target tdstuf
 tdstuf_EXTERNAL_OBJECTS =
 
-test/tdstuf: test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o
-test/tdstuf: test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o
-test/tdstuf: test/CMakeFiles/tdstuf.dir/build.make
-test/tdstuf: test/CMakeFiles/tdstuf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/repo/scratch/MomentPlus/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tdstuf"
-	cd /root/repo/scratch/MomentPlus/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tdstuf.dir/link.txt --verbose=$(VERBOSE)
+test/tdstuf.exe: test/CMakeFiles/tdstuf.dir/__/src/datestuff.cpp.o
+test/tdstuf.exe: test/CMakeFiles/tdstuf.dir/tdstuf.cpp.o
+test/tdstuf.exe: test/CMakeFiles/tdstuf.dir/build.make
+test/tdstuf.exe: test/CMakeFiles/tdstuf.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/d/repositary/MomentPlus/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tdstuf.exe"
+	cd /d/repositary/MomentPlus/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tdstuf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-test/CMakeFiles/tdstuf.dir/build: test/tdstuf
+test/CMakeFiles/tdstuf.dir/build: test/tdstuf.exe
 
 .PHONY : test/CMakeFiles/tdstuf.dir/build
 
 test/CMakeFiles/tdstuf.dir/clean:
-	cd /root/repo/scratch/MomentPlus/test && $(CMAKE_COMMAND) -P CMakeFiles/tdstuf.dir/cmake_clean.cmake
+	cd /d/repositary/MomentPlus/test && $(CMAKE_COMMAND) -P CMakeFiles/tdstuf.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/tdstuf.dir/clean
 
 test/CMakeFiles/tdstuf.dir/depend:
-	cd /root/repo/scratch/MomentPlus && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/repo/scratch/MomentPlus /root/repo/scratch/MomentPlus/test /root/repo/scratch/MomentPlus /root/repo/scratch/MomentPlus/test /root/repo/scratch/MomentPlus/test/CMakeFiles/tdstuf.dir/DependInfo.cmake --color=$(COLOR)
+	cd /d/repositary/MomentPlus && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /d/repositary/MomentPlus /d/repositary/MomentPlus/test /d/repositary/MomentPlus /d/repositary/MomentPlus/test /d/repositary/MomentPlus/test/CMakeFiles/tdstuf.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/CMakeFiles/tdstuf.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /root/repo/scratch/MomentPlus/test
+# Install script for directory: /d/repositary/MomentPlus/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

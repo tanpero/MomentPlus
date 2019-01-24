@@ -2,11 +2,10 @@
 #define DATESTUFF_H
 
 #include <cassert>
-#include <exception>
 #include <cstdio>
 #include "datefwd.h"
 
-char* error_type[] = {
+static const char* error_table[] = {
 "Invalid Date",
 "Invalid Year",
 "Invalid Month",
@@ -25,12 +24,12 @@ namespace DateStuff
 		RANGE_ERROR,
 		BIRTHDAY_ERROR
 	};
-
+#ifdef _DEBUG_
 #define Throw(cod)\
 do {\
 	assert(cod < 0 || cod > 6);\
 	std::string msg = "Type: ";\
-	msg += error_type[cod];\
+	msg += error_table[cod];\
 	msg += "\nFrom: ";\
 	msg += __FILE__;\
 	msg += " : line ";\
@@ -38,6 +37,9 @@ do {\
 	msg += "\n";\
 	throw std::exception(msg.data());\
 } while (0)
+#else
+#define Throw(cod) //
+#endif
 
 	struct Duration
 	{
@@ -211,6 +213,6 @@ do {\
 		checkYMD(y2, m2, d2);
 		return daysBetween(y1, m1, d1, y2, m2, d2) / 7L;
 	}
-};
+ };
 
 #endif // !DATESTUFF_H
