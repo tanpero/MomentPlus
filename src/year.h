@@ -115,7 +115,8 @@ namespace DateStuff
 	return isEmpty() ? std::string()
 			: DateStuff::toString(m_year, 0, 0);
     }
-}	
+
+} // namespace DateStuff	
 
 #endif // !_SRC_YEAR_H_
 

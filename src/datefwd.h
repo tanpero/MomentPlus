@@ -125,6 +125,6 @@ namespace DateStuff
 	void checkYM(int y, int m);
 	void checkYMD(int y, int m, int d);
 
-}
+} // namespace DateStuff
 
 #endif // !DATEFWD_H

@@ -6,12 +6,12 @@
 #include "datefwd.h"
 
 static const char* error_table[] = {
-"Invalid Date",
-"Invalid Year",
-"Invalid Month",
-"Invalid Day",
-"Range Error",
-"Invalid Birthday"
+    "Invalid Date",
+    "Invalid Year",
+    "Invalid Month",
+    "Invalid Day",
+    "Range Error",
+    "Invalid Birthday"
 };
 
 namespace DateStuff
@@ -213,6 +213,7 @@ do {\
 		checkYMD(y2, m2, d2);
 		return daysBetween(y1, m1, d1, y2, m2, d2) / 7L;
 	}
- };
+
+ }; // namespace DateStuff
 
 #endif // !DATESTUFF_H
