@@ -215,11 +215,81 @@ namespace DateStuff
 	DateStuff::substractWeeks(weeks, m_year, m_month, m_day);
     }
 
-    
+    long Date::weeksBetween(const Date& r) const
+    {
+	if (!isValidYMDay() || !r.isValidYMDay())
+	{
+	    Throw(DATE_ERROR);
+	}
+	return DateStuff::weeksBetween(m_year, m_month, m_day,
+				r.m_year, r.m_month, r.m_day);
+    }
 
+    Duration Date::ageBetween(const Date& r)
+    {
+	if (!isValid() || r.isValid())
+	{
+	    Throw(DATE_ERROR);
+	}
+	
+	if (isValidYMDay() && r.isValidYMDay())
+	{
+	    return DateStuff::ageBetween(m_year, m_month, m_day,
+	    				r.m_year, r.m_month, r.m_day);
+	}
+	else if (isValidYMonth() && r.isValidYMonth())
+	{
+	    return DateStuff::ageBetween(m_year, m_month, 0,
+	    				r.m_year, r.m_month, 0);
+	}
+	else if (isValidYear() && r.isValidYear())
+	{
+	    return DateStuff::ageBetween(m_year, 0, 0, r.m_year, 0, 0);
+	}
+	else
+	{
+	    // It shouldn't be got in there
+	    assert(0);
+	    return Duration(-1, -1, -1);
+	}
+    }
 
+    Duration Date::age() const
+    {
+	return ageBetween(today());
+    }
 
+    int Date::dayOfWeek() const
+    {
+	if (!isValidYMDay())
+	{
+	    Throw(DATE_ERROR);
+	}
+	return DateStuff::dayOfWeek(m_year, m_month, m_day);
+    }
 
-
-
+    int Date::dayOfYear() const
+    {
+	if (!isValidYMDay())
+	{
+	    Throw(DATE_ERROR);
+	}
+	return DateStuff::dayOfYear(m_year, m_month, m_day);
+    }
+    int Date::endOfMonth() const
+    {
+	if (!isValidYMonth())
+	{
+	    Throw(DATE_ERROR);
+	}
+	return DateStuff::endOfMonth(m_year, m_month);
+    }
+    int Date::endOfYear() const
+    {
+	if (!isValidYMonth())
+	{
+	    Throw(DATE_ERROR);
+	}
+	return DateStuff::dayOfWeek(m_year, m_month);
+    }
 
