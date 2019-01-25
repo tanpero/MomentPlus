@@ -158,7 +158,55 @@ namespace DateStuff
 			: mdiff) : ydiff;
     }
 
+    inline bool Date::operator==(const Date& r) const
+    {
+	return compare(r) == 0;
+    }
 
+    inline bool Date::operator!=(const Date& r) const
+    {
+	return compare(r) != 0;
+    }
+
+    inline bool Date::operator<(const Date& r) const
+    {
+	return compare(r) < 0;
+    }
+
+    inline bool Date::operator>(const Date& r) const
+    {
+	return compare(r) > 0;
+    }
+
+    inline bool Date::operator<=(const Date& r) const
+    {
+	return compare(r) <= 0;
+    }
+
+    inline bool Date::operator>=(const Date& r) const
+    {
+	return compare(r) >= 0;
+    }
+
+    inline Duration Date::operator-(const Date& r) const
+    {
+	return ageBetween(r);
+    }
+
+    inline std::string Date::toString() const
+    {
+	return isEmpty() ? std::string()
+			: DateStuff::toString()(m_year, m_month, m_day);
+    }
+
+    inline Date Date::today()
+    {
+	int y, m, d;
+	DateStuff::today(y, m, d);
+	return Date(y, m, d);
+    }
+
+};
 	
 #endif // !_SRC_DATE_H_
 
