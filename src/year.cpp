@@ -27,7 +27,7 @@ DateStuff::Year::Year(const std::string& s)
     }
 }
 
-DateStuff::addYears(int y)
+void DateStuff::Year::addYears(int y)
 {
     if (m_year > MAX_YEAR - y)
     {
@@ -36,7 +36,7 @@ DateStuff::addYears(int y)
     m_year += y;
 }
 
-DateStuff::substractYears(int y)
+void DateStuff::Year::substractYears(int y)
 {
     if (m_year < MIN_YEAR + y)
     {
@@ -45,12 +45,12 @@ DateStuff::substractYears(int y)
     m_year -= y;
 }
 
-DateStuff::age() const
+DateStuff::Duration DateStuff::Year::age() const
 {
     return ageBetween(Year());
 }
 
-DateStuff::endOfYear() const
+int DateStuff::Year::endOfYear() const
 {
     if (!isValid())
     {

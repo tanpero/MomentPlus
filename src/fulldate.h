@@ -24,7 +24,7 @@ namespace DateStuff
 
     inline bool FullDate::isValid() const
     {
-	return isEmpty() || DateStuff::isValidYMDay(m_year, m_month, m_day)
+	return isEmpty() || DateStuff::isValidYMDay(m_year, m_month, m_day);
     }
 
     inline long FullDate::toJul() const

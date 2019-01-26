@@ -3,5 +3,8 @@ add_executable(
 	"../src/datestuff.cpp"
 	"tdstuf.cpp"
 )
-	
+
+add_executable(
+	tdate
+	"../src/	
 

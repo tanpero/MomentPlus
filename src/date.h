@@ -1,7 +1,7 @@
 #ifndef _SRC_DATE_H_
 #define _SRC_DATE_H_
 
-#include "datestuff."
+#include "datestuff.h"
 #include "year.h"
 #include "ymonth.h"
 
@@ -16,7 +16,7 @@ namespace DateStuff
 	Date(const YMonth&);
 
 	Date& operator=(const std::string&);
-	Date& operator=(const Year*);
+	Date& operator=(const Year&);
 	Date& operator=(const YMonth&);
 
 	// Getters
@@ -54,8 +54,9 @@ namespace DateStuff
 	void substractWeeks(long);
 	long weeksBetween(const Date&) const;
 	void addWeekdays(long);
-	long weeksBetween(const Date&) const;
-	Duration operator-(const Duration&) const;
+	void substractWeekdays(long days);
+	long weekdaysBetween(const Date&) const;
+	Duration operator-(const Date&) const;
 
 	// Special requests
 	int dayOfWeek() const;
@@ -153,7 +154,7 @@ namespace DateStuff
     inline int Date::compare(const Date& r) const
     {
 	int ydiff = m_year - r.m_year;
-	int mdiff = m_month - y.m_month;
+	int mdiff = m_month - r.m_month;
 	return (ydiff == 0) ? ((mdiff == 0) ? m_day - r.m_day
 			: mdiff) : ydiff;
     }
@@ -196,7 +197,7 @@ namespace DateStuff
     inline std::string Date::toString() const
     {
 	return isEmpty() ? std::string()
-			: DateStuff::toString()(m_year, m_month, m_day);
+			: DateStuff::toString(m_year, m_month, m_day);
     }
 
     inline Date Date::today()

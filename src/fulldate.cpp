@@ -2,7 +2,7 @@
 
 namespace DateStuff
 {
-    FullDate::FullDate(const string& s)
+    FullDate::FullDate(const std::string& s)
     {
 	DateStuff::fromString(s, m_year, m_month, m_day);
 	if (!isEmpty() && !isValidYMDay())
@@ -16,7 +16,7 @@ namespace DateStuff
 	m_year  = year;
 	m_month = month;
 	m_day   = day;
-	if (!isEmpty && !isValidYMDay()
+	if (!isEmpty() && !isValidYMDay())
 	{
 	    Throw(DATE_ERROR);
 	}

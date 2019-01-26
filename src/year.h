@@ -10,7 +10,7 @@ namespace DateStuff
     public:
 	Year();
 	Year(int);
-	Year(const string&);
+	Year(const std::string&);
 
 	// Getter
 	int getYear() const;
@@ -29,10 +29,10 @@ namespace DateStuff
 
 	// Other operation
 	virtual void addYears(int years);
-	virtual void substractYears(int Years);
+	virtual void substractYears(int years);
 
-	int yearsBetween(const Years& right) const;
-	Duration ageBetween(const Years& right) const;
+	int yearsBetween(const Year& right) const;
+	Duration ageBetween(const Year& right) const;
 	Duration age() const;
 	int endOfYear() const;
 

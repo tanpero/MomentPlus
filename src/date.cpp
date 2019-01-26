@@ -5,12 +5,12 @@ namespace DateStuff
     Date::Date(int y, int m, int d)
     {
 	m_year  = y;
-	m_month = m
+	m_month = m;
 	m_day   = d;
 
 	if (!isEmpty() && !isValid())
 	{
-	    Thow(DATE_ERROR);
+	    Throw(DATE_ERROR);
 	}
     }
 
@@ -225,7 +225,7 @@ namespace DateStuff
 				r.m_year, r.m_month, r.m_day);
     }
 
-    Duration Date::ageBetween(const Date& r)
+    Duration Date::ageBetween(const Date& r) const
     {
 	if (!isValid() || r.isValid())
 	{
@@ -290,6 +290,8 @@ namespace DateStuff
 	{
 	    Throw(DATE_ERROR);
 	}
-	return DateStuff::dayOfWeek(m_year, m_month);
+	return DateStuff::endOfYear(m_year);
     }
+
+}; // namespace DateStuff
 

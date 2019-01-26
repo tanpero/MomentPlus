@@ -52,7 +52,7 @@ namespace DateStuff
 
     private:
 	void resolve(long months);
-    }
+    };
 
     inline int YMonth::getMonth() const
     {
@@ -65,14 +65,14 @@ namespace DateStuff
 	return (diff == 0) ? m_month - right.m_month : diff;
     }
 
-    inline bool YMonth::operations==(const YMonth& right) const
+    inline bool YMonth::operator==(const YMonth& right) const
     {
 	return compare(right) == 0;
     }
 
     inline bool YMonth::operator!=(const YMonth& right) const
     {
-	return const(right) != 0;
+	return compare(right) != 0;
     }
 
     inline bool YMonth::operator<(const YMonth& right) const
@@ -136,7 +136,7 @@ namespace DateStuff
     {
 	char buffer[23];
 	sprintf(buffer, "%04d%02d", m_year, m_month);
-	return isEmpty() ? std::string() : string(buffer);
+	return isEmpty() ? std::string() : std::string(buffer);
     }
 
     inline void YMonth::resolve(long months)
