@@ -2,11 +2,13 @@ cmake_minimum_required(VERSION 2.6)
 project(MomentPlus)
 
 aux_source_directory(./src srcs)
+
 set(LIBRARY_OUTPUT_PATH	../bin)
 add_library(MomentPlus SHARED ${srcs})
 add_library(MomentPlus_static STATIC ${srcs})
 
 set_target_properties(MomentPlus_static PROPERTIES OUTPUT_NAME "momentplus")
+set_target_properties(MomentPlus PROPERTIES OUTPUT_NAME "momentplus")
 
 set_target_properties(MomentPlus PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 set_target_properties(MomentPlus_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
