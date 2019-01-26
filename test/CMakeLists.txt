@@ -4,7 +4,3 @@ add_executable(
 	"tdstuf.cpp"
 )
 
-add_executable(
-	tdate
-	"../src/	
-

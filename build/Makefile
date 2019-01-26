@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /root/repo/scratch/MomentPlus/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named MomentPlus_static
+
+# Build rule for target.
+MomentPlus_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MomentPlus_static
+.PHONY : MomentPlus_static
+
+# fast build rule for target.
+MomentPlus_static/fast:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/build
+.PHONY : MomentPlus_static/fast
+
+#=============================================================================
+# Target rules for targets named MomentPlus
+
+# Build rule for target.
+MomentPlus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MomentPlus
+.PHONY : MomentPlus
+
+# fast build rule for target.
+MomentPlus/fast:
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/build
+.PHONY : MomentPlus/fast
+
+#=============================================================================
 # Target rules for targets named tdstuf
 
 # Build rule for target.
@@ -123,15 +149,182 @@ tdstuf/fast:
 	$(MAKE) -f test/CMakeFiles/tdstuf.dir/build.make test/CMakeFiles/tdstuf.dir/build
 .PHONY : tdstuf/fast
 
+src/date.o: src/date.cpp.o
+
+.PHONY : src/date.o
+
+# target to build an object file
+src/date.cpp.o:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/date.cpp.o
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/date.cpp.o
+.PHONY : src/date.cpp.o
+
+src/date.i: src/date.cpp.i
+
+.PHONY : src/date.i
+
+# target to preprocess a source file
+src/date.cpp.i:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/date.cpp.i
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/date.cpp.i
+.PHONY : src/date.cpp.i
+
+src/date.s: src/date.cpp.s
+
+.PHONY : src/date.s
+
+# target to generate assembly for a file
+src/date.cpp.s:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/date.cpp.s
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/date.cpp.s
+.PHONY : src/date.cpp.s
+
+src/datestuff.o: src/datestuff.cpp.o
+
+.PHONY : src/datestuff.o
+
+# target to build an object file
+src/datestuff.cpp.o:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/datestuff.cpp.o
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/datestuff.cpp.o
+.PHONY : src/datestuff.cpp.o
+
+src/datestuff.i: src/datestuff.cpp.i
+
+.PHONY : src/datestuff.i
+
+# target to preprocess a source file
+src/datestuff.cpp.i:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/datestuff.cpp.i
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/datestuff.cpp.i
+.PHONY : src/datestuff.cpp.i
+
+src/datestuff.s: src/datestuff.cpp.s
+
+.PHONY : src/datestuff.s
+
+# target to generate assembly for a file
+src/datestuff.cpp.s:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/datestuff.cpp.s
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/datestuff.cpp.s
+.PHONY : src/datestuff.cpp.s
+
+src/fulldate.o: src/fulldate.cpp.o
+
+.PHONY : src/fulldate.o
+
+# target to build an object file
+src/fulldate.cpp.o:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/fulldate.cpp.o
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/fulldate.cpp.o
+.PHONY : src/fulldate.cpp.o
+
+src/fulldate.i: src/fulldate.cpp.i
+
+.PHONY : src/fulldate.i
+
+# target to preprocess a source file
+src/fulldate.cpp.i:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/fulldate.cpp.i
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/fulldate.cpp.i
+.PHONY : src/fulldate.cpp.i
+
+src/fulldate.s: src/fulldate.cpp.s
+
+.PHONY : src/fulldate.s
+
+# target to generate assembly for a file
+src/fulldate.cpp.s:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/fulldate.cpp.s
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/fulldate.cpp.s
+.PHONY : src/fulldate.cpp.s
+
+src/year.o: src/year.cpp.o
+
+.PHONY : src/year.o
+
+# target to build an object file
+src/year.cpp.o:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/year.cpp.o
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/year.cpp.o
+.PHONY : src/year.cpp.o
+
+src/year.i: src/year.cpp.i
+
+.PHONY : src/year.i
+
+# target to preprocess a source file
+src/year.cpp.i:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/year.cpp.i
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/year.cpp.i
+.PHONY : src/year.cpp.i
+
+src/year.s: src/year.cpp.s
+
+.PHONY : src/year.s
+
+# target to generate assembly for a file
+src/year.cpp.s:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/year.cpp.s
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/year.cpp.s
+.PHONY : src/year.cpp.s
+
+src/ymonth.o: src/ymonth.cpp.o
+
+.PHONY : src/ymonth.o
+
+# target to build an object file
+src/ymonth.cpp.o:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/ymonth.cpp.o
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/ymonth.cpp.o
+.PHONY : src/ymonth.cpp.o
+
+src/ymonth.i: src/ymonth.cpp.i
+
+.PHONY : src/ymonth.i
+
+# target to preprocess a source file
+src/ymonth.cpp.i:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/ymonth.cpp.i
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/ymonth.cpp.i
+.PHONY : src/ymonth.cpp.i
+
+src/ymonth.s: src/ymonth.cpp.s
+
+.PHONY : src/ymonth.s
+
+# target to generate assembly for a file
+src/ymonth.cpp.s:
+	$(MAKE) -f CMakeFiles/MomentPlus_static.dir/build.make CMakeFiles/MomentPlus_static.dir/src/ymonth.cpp.s
+	$(MAKE) -f CMakeFiles/MomentPlus.dir/build.make CMakeFiles/MomentPlus.dir/src/ymonth.cpp.s
+.PHONY : src/ymonth.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... MomentPlus_static"
+	@echo "... rebuild_cache"
+	@echo "... MomentPlus"
 	@echo "... tdstuf"
+	@echo "... src/date.o"
+	@echo "... src/date.i"
+	@echo "... src/date.s"
+	@echo "... src/datestuff.o"
+	@echo "... src/datestuff.i"
+	@echo "... src/datestuff.s"
+	@echo "... src/fulldate.o"
+	@echo "... src/fulldate.i"
+	@echo "... src/fulldate.s"
+	@echo "... src/year.o"
+	@echo "... src/year.i"
+	@echo "... src/year.s"
+	@echo "... src/ymonth.o"
+	@echo "... src/ymonth.i"
+	@echo "... src/ymonth.s"
 .PHONY : help
 
 
